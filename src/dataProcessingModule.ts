@@ -9,6 +9,7 @@
  */
 export function sortArray(numbers: number[]): number[] {
     // 請在此處寫下你的程式碼
+    return numbers.sort((a: number, b: number) => a - b)
 }
 
 /**
@@ -23,6 +24,9 @@ export function sortArray(numbers: number[]): number[] {
  */
 export function filterArray(numbers: number[], predicate: (num: number) => boolean): number[] {
     // 請在此處寫下你的程式碼
+
+
+    return numbers.filter((item: number) => predicate(item))
 }
 
 /**
@@ -37,4 +41,5 @@ export function filterArray(numbers: number[], predicate: (num: number) => boole
  */
 export function transformArray(numbers: number[], transform: (num: number) => number): number[] {
     // 請在此處寫下你的程式碼
+    return numbers.map((number: number) => transform(number))
 }

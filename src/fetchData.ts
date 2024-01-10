@@ -6,4 +6,23 @@
  */
 
 // 請在下方寫下你的程式碼
+interface Todo {
+    userId: number,
+    id: number,
+    title: string,
+    completed: boolean
+}
 
+export const fetchData = (url: string): Promise<Todo> => {
+    return new Promise(async (resole, reject) => {
+        try {
+            const res = await fetch(url)
+            const resJson = await res.json()
+
+            resole(resJson)
+        } catch (error) {
+            reject(error)
+        }
+    })
+
+}

@@ -6,4 +6,13 @@
  */
 export function uniqueElements(array: number[]): number[] {
     // 請在此處寫下你的程式碼
+    const returnArray: number[] = []
+    array.forEach((item: number) => {
+        const index = returnArray.findIndex((num: number) => num === item)
+        if (index === -1) {
+            returnArray.push(item)
+        }
+    })
+
+    return returnArray
 }
